@@ -29,7 +29,7 @@ if (false === isset($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigur
     ];
 }
 
-if (TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_FE) {
+if (!\Aoe\Restler\Bootstrap::isVersion9() && TYPO3_REQUESTTYPE & TYPO3_REQUESTTYPE_FE) {
     // Register request handler for API
     \TYPO3\CMS\Core\Core\Bootstrap::getInstance()->registerRequestHandlerImplementation(\Aoe\Restler\Http\RestRequestHandler::class);
 }
