@@ -33,3 +33,5 @@ if (!\Aoe\Restler\Bootstrap::isVersion9() && TYPO3_REQUESTTYPE & TYPO3_REQUESTTY
     // Register request handler for API
     \TYPO3\CMS\Core\Core\Bootstrap::getInstance()->registerRequestHandlerImplementation(\Aoe\Restler\Http\RestRequestHandler::class);
 }
+
+\Doctrine\Common\Annotations\AnnotationReader::addGlobalIgnoredName('url');
