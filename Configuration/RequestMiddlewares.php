@@ -14,10 +14,10 @@ return [
         'aoe/restler/request-handler' => [
             'target' => \Aoe\Restler\Middleware\RestlerMiddleware::class,
             'after' => [
-                'typo3/cms-frontend/eid'
+                'typo3/cms-frontend/static-route-resolver'
             ],
             'before' => [
-                'typo3/cms-frontend/tsfe'
+                'typo3/cms-frontend/page-resolver'
             ]
         ]
     ]
