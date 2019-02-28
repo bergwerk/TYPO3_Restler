@@ -93,7 +93,7 @@ class Loader implements SingletonInterface
         }
 
         $bootstrapObj = Bootstrap::getInstance();
-        $bootstrapObj->loadExtensionTables(true);
+        //$bootstrapObj->loadExtensionTables(true);
         $bootstrapObj->initializeBackendUser();
         $bootstrapObj->initializeBackendAuthentication(true);
         $bootstrapObj->initializeLanguageObject();
@@ -140,7 +140,7 @@ class Loader implements SingletonInterface
             return;
         }
 
-        $GLOBALS['TT'] = new NullTimeTracker();
+        $GLOBALS['TT'] = new \TYPO3\CMS\Core\TimeTracker\TimeTracker(false);
 
         if ($this->isFrontEndUserInitialized === false) {
             $this->initializeFrontEndUser($pageId, $type);
